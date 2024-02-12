@@ -1,0 +1,28 @@
+<div>
+  <h1>Angular Price Range Filter</h1>
+  <hr>
+  <label>Min: {{ ui.min | currency }}</label>
+  <input type="range" min="0" max="1000" [(ngModel)]="ui.min">
+  <hr>
+  <label>Max: {{ ui.max | currency }}</label>
+  <input type="range" min="0" max="1000" [(ngModel)]="ui.max">
+  <div *ngIf="ui.min > ui.max">
+    <p>Min > Max makes little sense – sorry this is not about great UI/UX/BuzzBuzz ;-)</p>
+  </div>
+  <hr>
+  <table>
+    <caption>Products within price range</caption>
+    <thead>
+      <tr>
+        <th (click)="toggleSort('name')">Name</th>
+        <th (click)="toggleSort('price')">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of (products | priceRangeFilter: ui.min: ui.max)">
+        <td>{{ product.name }}</td>
+        <td>{{ product.price | currency }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

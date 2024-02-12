@@ -1,0 +1,106 @@
+/* styles.css */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+hr {
+    width: 100%;
+    margin: 20px 0;
+    border: none;
+    border-top: 1px solid #ccc;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="range"] {
+    width: 100%;
+    margin-top: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+}
+
+caption {
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px;
+    text-align: left;
+    background-color: #ccc;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+thead th {
+    cursor: pointer;
+    background-color: whitesmoke;
+    text-align: left;
+    padding: 10px;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #e0e0e0;
+}
+
+td {
+    padding: 10px;
+}
+
+/* Message for invalid range */
+div[ngIf] {
+    clear: both;
+    margin: 10px 0;
+    float: left;
+    background: #e0353d;
+    padding: 10px;
+    width: 100%;
+}
+
+div[ngIf]>p {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+/* Sorting indicators */
+th .acc:after {
+    content: ' \25B2';
+    color: #777;
+    font-size: 8px;
+    position: absolute;
+    margin: 3px 8px;
+}
+
+th .dec:after {
+    content: ' \25BC';
+    color: #777;
+    font-size: 8px;
+    position: absolute;
+    margin: 3px 8px;
+}
